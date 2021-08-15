@@ -1,0 +1,52 @@
+MyObjectBuilder_AmmoMagazine
+    NATO_25x184mm 1208649763
+    Missile200mm 919525482
+    NATO_Sp56x45mm 2134857815   
+
+MyObjectBuilder_Component
+    Girder -996734970
+    SmallTube 2132736269
+    StellPlate -564275052
+    InteriorPlate 331598766
+    MetalGrid -1369136367
+    Computer -578032182
+    Reactor 1127246770
+    Motor 1113666551
+    LargeTube -1567759478
+    GravityGenerator -327993056
+    BulletproofGlass -1380109050
+    Display 945452256
+    Medical -1594297580
+    Construction -1760005143
+    Detector 618858639
+    Explosives 1491057709
+    RadioCommunication 188555123
+    Thrust 349668066
+
+MyObjectBuilder_Ore
+    Ice 1111579325
+    Iron -347956095
+	Silicon 292897962
+
+MyObjectBuilder_Ingot
+    Iron -372418097
+    Silicon 12515000
+    Silver -548720088
+    Nickel -1127955741
+    Cobalt 2130413927
+    Magnesium -979688779
+    Stone -591694226 [gravel]
+    Uranium 1295265369
+    Platinum 1078297298
+
+MyObjectBuilder_OxygenContainerObject
+    OxygenBottle -48240646
+    
+MyObjectBuilder_GasContainerObject
+    hydrogenBottle -783999595
+    
+MyObjectBuilder_PhysicalGunObject
+    WelderItem 115531966
+    HandDrillItem 618343260
+    AngleGrinderItem 323667091
+    AngleGrinder2Item 864520405
