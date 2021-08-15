@@ -28,7 +28,7 @@ public Program()
     monitoringOres.Add("Stone", new ItemStack("Stone"));
     monitoringOres.Add("Iron", new ItemStack("Iron"));
     monitoringOres.Add("Silicon", new ItemStack("Silicon"));
-	    
+
     monitoringIngots.Add("Iron", new ItemStack("Iron"));
     monitoringIngots.Add("Silicon", new ItemStack("Silicon"));
     monitoringIngots.Add("Silver", new ItemStack("Silver"));
@@ -38,7 +38,7 @@ public Program()
     monitoringIngots.Add("Stone", new ItemStack("Gravel"));
     monitoringIngots.Add("Uranium", new ItemStack("Uranium"));
     monitoringIngots.Add("Platinum", new ItemStack("Platinum"));
-    
+
     monitoringComp.Add("Girder", new ItemStack("Girder"));
     monitoringComp.Add("SmallTube", new ItemStack("Small Tube"));
     monitoringComp.Add("SteelPlate", new ItemStack("Steel Plate"));
@@ -72,7 +72,7 @@ public void Main(string argument, UpdateType updateSource)
     ClearError();
     int updateFrom = (int)updateSource;
     Echo("Update from: " + updateFrom.ToString() + ", called: " + counter);
-	// test przybliżonego czasu trwania
+    // test przybliżonego czasu trwania
     //int begin = DateTime.Now.Millisecond;
 
 //fajny, nieużywany
@@ -155,12 +155,12 @@ public void Main(string argument, UpdateType updateSource)
 ////// Printing...
     IMyTextSurface lcd = (IMyTextSurface)GridTerminalSystem.GetBlockWithName(lcdVolume);
     if(lcd != null)
-	{
+    {
         lcd.WriteText( "Cargo volume:\n"
-			+string.Format("{0:0.00}", (double)currentVolume)+" / "
-			+string.Format("{0:0.00}", (double)maxVolume)+" L\n"
-			+percentageVolume.ToString()+" %", false);
-	}
+            +string.Format("{0:0.00}", (double)currentVolume)+" / "
+            +string.Format("{0:0.00}", (double)maxVolume)+" L\n"
+            +percentageVolume.ToString()+" %", false);
+    }
     
     
     lcd = (IMyTextSurface)GridTerminalSystem.GetBlockWithName(lcdOre);
@@ -192,8 +192,8 @@ public void Main(string argument, UpdateType updateSource)
             lcd.WriteText(string.Format("{0,5:#0;;--}", (int)item.Amount)+" "+item.Name+"\n", true);
         }
     }
-	
-	//test przybliżonego czasu trwania
+
+    //test przybliżonego czasu trwania
     // int end = DateTime.Now.Millisecond;
     // Echo(string.Format("Time: {0} {1} {2}", begin, end, end-begin));
 }

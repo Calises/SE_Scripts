@@ -26,7 +26,8 @@ MyObjectBuilder_Component
 MyObjectBuilder_Ore
     Ice 1111579325
     Iron -347956095
-	Silicon 292897962
+    Stone
+    Silicon 292897962
 
 MyObjectBuilder_Ingot
     Iron -372418097
