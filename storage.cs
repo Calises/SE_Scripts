@@ -29,6 +29,8 @@ public Program()
     monitoringOres.Add("Iron", new ItemStack("Iron"));
     monitoringOres.Add("Silicon", new ItemStack("Silicon"));
     monitoringOres.Add("Scrap", new ItemStack("Scrap Metal"));
+    monitoringOres.Add("Gold", new ItemStack("Gold"));
+    monitoringOres.Add("Uranium", new ItemStack("Uranium"));
 
     monitoringIngots.Add("Iron", new ItemStack("Iron"));
     monitoringIngots.Add("Silicon", new ItemStack("Silicon"));
@@ -39,6 +41,7 @@ public Program()
     monitoringIngots.Add("Stone", new ItemStack("Gravel"));
     monitoringIngots.Add("Uranium", new ItemStack("Uranium"));
     monitoringIngots.Add("Platinum", new ItemStack("Platinum"));
+    monitoringIngots.Add("Gold", new ItemStack("Gold"));
 
     monitoringComp.Add("Girder", new ItemStack("Girder"));
     monitoringComp.Add("SmallTube", new ItemStack("Small Tube"));

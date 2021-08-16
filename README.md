@@ -9,3 +9,6 @@ Lista `static string` na początku pliku definiuje nazwy obsługiwanych wyświet
 
 ## hash.txt 
 Pomocnicza lista nazw przedmiotów z podziałem na grupy. Przypisane do nich hash'e są już nieaktualne - zmieniają się (zależnie od patcha?)
+
+## Pomysły
+Damage monitor
