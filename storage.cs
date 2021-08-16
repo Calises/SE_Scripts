@@ -28,6 +28,7 @@ public Program()
     monitoringOres.Add("Stone", new ItemStack("Stone"));
     monitoringOres.Add("Iron", new ItemStack("Iron"));
     monitoringOres.Add("Silicon", new ItemStack("Silicon"));
+    monitoringOres.Add("Scrap", new ItemStack("Scrap Metal"));
 
     monitoringIngots.Add("Iron", new ItemStack("Iron"));
     monitoringIngots.Add("Silicon", new ItemStack("Silicon"));
@@ -48,14 +49,14 @@ public Program()
     monitoringComp.Add("Reactor", new ItemStack("Reactor"));
     monitoringComp.Add("Motor", new ItemStack("Motor"));
     monitoringComp.Add("LargeTube", new ItemStack("Large Tube"));
-    monitoringComp.Add("GravityGenerator", new ItemStack("Gravity Generator"));
-    monitoringComp.Add("BulletproofGlass", new ItemStack("Bulletproof Glass"));
+    monitoringComp.Add("GravityGenerator", new ItemStack("Gravity Gen."));
+    monitoringComp.Add("BulletproofGlass", new ItemStack("B-proof Glass"));
     monitoringComp.Add("Display", new ItemStack("Display"));
     monitoringComp.Add("Medical", new ItemStack("Medical"));
-    monitoringComp.Add("Construction", new ItemStack("Construction Comp."));
+    monitoringComp.Add("Construction", new ItemStack("Constr. Comp."));
     monitoringComp.Add("Detector", new ItemStack("Detector Comp."));
     monitoringComp.Add("Explosives", new ItemStack("Explosives"));
-    monitoringComp.Add("RadioCommunication", new ItemStack("Communication Comp."));
+    monitoringComp.Add("RadioCommunication", new ItemStack("Comm. Comp."));
     monitoringComp.Add("Thrust", new ItemStack("Thruster Comp."));
     monitoringComp.Add("SolarCell", new ItemStack("Solar Cell"));
     monitoringComp.Add("PowerCell", new ItemStack("Power Cell"));
@@ -73,7 +74,7 @@ public void Main(string argument, UpdateType updateSource)
     int updateFrom = (int)updateSource;
     Echo("Update from: " + updateFrom.ToString() + ", called: " + counter);
     // test przybliżonego czasu trwania
-    int begin = DateTime.Now.Millisecond;
+    //int begin = DateTime.Now.Millisecond;
 
 //fajny, nieużywany
     // List<IMyInventory> tempList = new List<IMyInventory>();
@@ -169,8 +170,8 @@ public void Main(string argument, UpdateType updateSource)
     }
 
     //test przybliżonego czasu trwania
-    int end = DateTime.Now.Millisecond;
-    Echo(string.Format("Time: {0} {1} {2}", begin, end, end-begin));
+    // int end = DateTime.Now.Millisecond;
+    // Echo(string.Format("Time: {0} {1} {2}", begin, end, end-begin));
 }
 
 static ItemStack itemStack;

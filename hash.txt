@@ -28,6 +28,7 @@ MyObjectBuilder_Ore
     Iron -347956095
     Stone
     Silicon 292897962
+    Scrap
 
 MyObjectBuilder_Ingot
     Iron -372418097
