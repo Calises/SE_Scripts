@@ -1,4 +1,4 @@
-public struct ItemStack
+public class ItemStack
 {
     public ItemStack(string _y)
     {
@@ -6,8 +6,8 @@ public struct ItemStack
         Name = _y;
     }
     
-    public MyFixedPoint Amount;
-    public string Name;
+    public MyFixedPoint Amount { get; set; }
+    public string Name { get; }
 }
 
 Dictionary<string, ItemStack> monitoringOres = new Dictionary<string, ItemStack>();
@@ -73,7 +73,7 @@ public void Main(string argument, UpdateType updateSource)
     int updateFrom = (int)updateSource;
     Echo("Update from: " + updateFrom.ToString() + ", called: " + counter);
     // test przybliżonego czasu trwania
-    //int begin = DateTime.Now.Millisecond;
+    int begin = DateTime.Now.Millisecond;
 
 //fajny, nieużywany
     // List<IMyInventory> tempList = new List<IMyInventory>();
@@ -88,7 +88,6 @@ public void Main(string argument, UpdateType updateSource)
     List<MyInventoryItem> items = new List<MyInventoryItem>();
     MyFixedPoint currentVolume = 0;
     MyFixedPoint maxVolume = 0;
-    ItemStack itemStack;
 
     List<IMyTerminalBlock> allBlocks = new List<IMyTerminalBlock>();
     GridTerminalSystem.GetBlocks(allBlocks);
@@ -108,37 +107,13 @@ public void Main(string argument, UpdateType updateSource)
                 switch (item.Type.TypeId)
                 {                    
                 case "MyObjectBuilder_Ore":
-                    if(monitoringOres.TryGetValue(item.Type.SubtypeId, out itemStack))
-                    {
-                        itemStack.Amount = MyFixedPoint.AddSafe(itemStack.Amount, item.Amount);                    
-                        monitoringOres[item.Type.SubtypeId] = itemStack;
-                    }
-                    else
-                    {
-                        PrintTypeDetails(item.Type);
-                    }
+                    tryAddAmount(monitoringOres, item);
                     break;
                 case "MyObjectBuilder_Ingot":
-                    if(monitoringIngots.TryGetValue(item.Type.SubtypeId, out itemStack))
-                    {
-                        itemStack.Amount = MyFixedPoint.AddSafe(itemStack.Amount, item.Amount);                    
-                        monitoringIngots[item.Type.SubtypeId] = itemStack;
-                    }
-                    else
-                    {
-                        PrintTypeDetails(item.Type);
-                    }
+                    tryAddAmount(monitoringIngots, item);
                     break;
                 case "MyObjectBuilder_Component":
-                    if(monitoringComp.TryGetValue(item.Type.SubtypeId, out itemStack))
-                    {
-                        itemStack.Amount = MyFixedPoint.AddSafe(itemStack.Amount, item.Amount);                    
-                        monitoringComp[item.Type.SubtypeId] = itemStack;
-                    }
-                    else
-                    {
-                        PrintTypeDetails(item.Type);
-                    }
+                    tryAddAmount(monitoringComp, item);
                     break;
                 }
             }
@@ -194,18 +169,31 @@ public void Main(string argument, UpdateType updateSource)
     }
 
     //test przybliżonego czasu trwania
-    // int end = DateTime.Now.Millisecond;
-    // Echo(string.Format("Time: {0} {1} {2}", begin, end, end-begin));
+    int end = DateTime.Now.Millisecond;
+    Echo(string.Format("Time: {0} {1} {2}", begin, end, end-begin));
 }
 
+static ItemStack itemStack;
 private void ClearAmounts(Dictionary<string, ItemStack> list)
 {
-    ItemStack itemStack;
     foreach(string itemName in list.Keys.ToList())
     {
         itemStack = list[itemName];
         itemStack.Amount = MyFixedPoint.Zero;
         list[itemName] = itemStack;
+    }
+}
+
+private void tryAddAmount(Dictionary<string, ItemStack> list, MyInventoryItem item)
+{
+    if(list.TryGetValue(item.Type.SubtypeId, out itemStack))
+    {
+        itemStack.Amount = MyFixedPoint.AddSafe(itemStack.Amount, item.Amount);
+        list[item.Type.SubtypeId] = itemStack;
+    }
+    else
+    {
+        PrintTypeDetails(item.Type);
     }
 }
 
