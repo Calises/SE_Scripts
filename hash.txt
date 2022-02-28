@@ -29,6 +29,7 @@ MyObjectBuilder_Ore
     Stone
     Silicon 292897962
     Scrap
+    Nickel
 
 MyObjectBuilder_Ingot
     Iron -372418097

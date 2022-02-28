@@ -10,5 +10,11 @@ Lista `static string` na początku pliku definiuje nazwy obsługiwanych wyświet
 ## hash.txt 
 Pomocnicza lista nazw przedmiotów z podziałem na grupy. Przypisane do nich hash'e są już nieaktualne - zmieniają się (zależnie od patcha?)
 
+## damageReport.cs
+??
+
+## batteryMonitor.cs
+Funkcja do monitorowania stanu baterii
+
 ## Pomysły
-Damage monitor
+Damage monitor ; do batteryMonitor: może pasek naładowania?

@@ -28,9 +28,14 @@ public Program()
     monitoringOres.Add("Stone", new ItemStack("Stone"));
     monitoringOres.Add("Iron", new ItemStack("Iron"));
     monitoringOres.Add("Silicon", new ItemStack("Silicon"));
+    monitoringOres.Add("Nickel", new ItemStack("Nickel"));
     monitoringOres.Add("Scrap", new ItemStack("Scrap Metal"));
     monitoringOres.Add("Gold", new ItemStack("Gold"));
     monitoringOres.Add("Uranium", new ItemStack("Uranium"));
+    monitoringOres.Add("Cobalt", new ItemStack("Cobalt"));
+    monitoringOres.Add("Magnesium", new ItemStack("Magnesium"));
+    monitoringOres.Add("Platinum", new ItemStack("Platinum"));
+    monitoringOres.Add("Silver", new ItemStack("Silver"));
 
     monitoringIngots.Add("Iron", new ItemStack("Iron"));
     monitoringIngots.Add("Silicon", new ItemStack("Silicon"));
@@ -129,7 +134,7 @@ public void Main(string argument, UpdateType updateSource)
     
     currentVolume = MyFixedPoint.MultiplySafe(currentVolume, 1000);
     maxVolume = MyFixedPoint.MultiplySafe(maxVolume, 1000);    
-    double percentageVolume = Math.Round((double)currentVolume.RawValue / (double)maxVolume.RawValue, 2);
+    double percentageVolume = Math.Round((double)currentVolume.RawValue / (double)maxVolume.RawValue * 100, 2);
     
 ////// Printing...
     IMyTextSurface lcd = (IMyTextSurface)GridTerminalSystem.GetBlockWithName(lcdVolume);
